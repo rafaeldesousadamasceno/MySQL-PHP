@@ -1,16 +1,29 @@
-<?php
+<!DOCTYPE html>
+<html lang="en">
 
-//Constantes para armazenamento das variáveis de conexão.
-define('HOST', '127.0.0.1');
-define('PORT', '3306');
-define('DBNAME', 'test');
-define('USER', 'root');
-define('PASSWORD', '85163494');
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conexão do PHP com MySQL</title>
+</head>
 
-try {
-    $dsn = new PDO("mysql:host=". HOST . ";port=".PORT.";dbname=" . DBNAME .
-    ";user=" . USER . ";password=" . PASSWORD);
-} catch (PDOException $e) {
-    echo 'A conexão falhou e retornou a seguinte mensagem de erro: ' .
-    $e->getMessage();
-}
+<body>
+    <h1>Cadastrar Usuário</h1>
+    <form action="conexao.php" method="post">
+        <div>
+            <label for="name">Nome: </label>
+            <input type="text" name="name" id="name" placeholder="Digite seu Nome Completo">
+        </div>
+        <div>
+            <label for="name">Email: </label>
+            <input type="email" name="email" id="email" placeholder="Digite seu melhor email">
+        </div>
+        <div>
+            <input type="submit" value="Cadastrar">
+        </div>
+    </form>
+
+</body>
+
+</html>
